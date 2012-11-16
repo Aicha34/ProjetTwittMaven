@@ -1,0 +1,7 @@
+*.class
+*.swp
+ProjetTwittMaven/target
+*.*~
+ProjetTwittMaven/.settings/
+ProjetTwittMaven/.project
+ProjetTwittMaven/.classpath
