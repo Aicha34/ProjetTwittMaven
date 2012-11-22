@@ -39,7 +39,7 @@ public class Message implements Serializable {
         // Constructeur par défaut nécessaire pour JPA
     }
     
-    //constructeur
+    
     public Message( String label, Date date )
     {
     	this.label = label;
