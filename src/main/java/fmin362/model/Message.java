@@ -39,9 +39,8 @@ public class Message implements Serializable {
         // Constructeur par défaut nécessaire pour JPA
     }
 
-    public Message( long codeMessage,String label, Date date )
+    public Message( String label, Date date )
     {
-        this.id=codeMessage;
     	this.label = label;
         this.date = date;
         
