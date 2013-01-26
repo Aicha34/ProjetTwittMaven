@@ -43,10 +43,10 @@ public class User implements Serializable {
 	@Column(nullable=false,length=10)
 	private String password;
 	
-	@Column(nullable=false, length=30)
+	@Column(nullable=true, length=30)
 	private String firstname;
 	
-	@Column(nullable=false, length=30)
+	@Column(nullable=true, length=30)
 	private String lastname;
 	
 	@Column(nullable=false,length=30)
@@ -65,7 +65,13 @@ public class User implements Serializable {
 	
 	private List<Message> messages;
 	
-	@PrePersist
+	
+	
+	public User() {
+		// constructeur par defaut necessaire pour JPA
+	}
+	
+	/*@PrePersist
 	@PreUpdate
 	private void validateData() throws ValidationException{
 		if (firstname==null ||"".equals(firstname))
@@ -104,7 +110,7 @@ public class User implements Serializable {
 	}
 	public long getId() {
 		return id;
-	}
+	}*/
 	
 	public String getLogin() {
 		return login;
@@ -146,6 +152,15 @@ public class User implements Serializable {
 		return messages;
 	}
 	
+	public Boolean findByLogin(String log){
+		if (this.getLogin().equals(log)){
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 	public User(String login, String password, String email, Date dateOfBirth) {
 		super();
 		this.login = login;
@@ -153,7 +168,12 @@ public class User implements Serializable {
 		this.email = email;
 		this.dateOfBirth = dateOfBirth;
 	}
-	
+	public User(String login, String password, String email) {
+		super();
+		this.login = login;
+		this.password = password;
+		this.email = email;
+	}
 	
 	
 	
