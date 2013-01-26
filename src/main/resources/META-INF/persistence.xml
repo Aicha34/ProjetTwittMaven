@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence>
+    <persistence-unit name="FMIN362_PU"  transaction-type="JTA">
+        <jta-data-source>jdbc/DSfmin362</jta-data-source>
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <properties>
+            <!-- Glassfish's EclipseLink should create the database schema automatically -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:derby:derbyDB;create=true"/>
+      		<property name="javax.persistence.jdbc.password" value="APP"/>
+      		<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
+      		<property name="javax.persistence.jdbc.user" value="APP"/>
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+            <property name="eclipselink.ddl-generation.output-mode" value="database" />
+        </properties>
+    </persistence-unit>
+</persistence>
